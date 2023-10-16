@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #1a1a2e;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 5px;
+      /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    label {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      transition: all 0.3s ease;
+      color: #a8b2d1; /* Updated color for label */
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #ffffff;
+      border-radius: 3px;
+      color: #000; /* Updated color for input text */
+    }
+    
+    input[type="text"]:focus ~ label,
+    input[type="email"]:focus ~ label,
+    input[type="password"]:focus ~ label,
+    input[type="text"]:valid ~ label,
+    input[type="email"]:valid ~ label,
+    input[type="password"]:valid ~ label {
+      top: -10px;
+      font-size: 12px;
+      color: #ff0000;
+    }
+    
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      border: none;
+      background-color: #3f72af;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    <a href="http://localhost/public/landing_page.html" style="color: white;">Back Home</a>
+  <div class="container">
+  <form method="post" action="detail_basic.php">
+      <div class="form-group">
+        <input type="hidden" name="formName" value="userData">
+        <input type="text" name="username" id="getUsername" required>
+        <label for="getUsername">Username</label>
+      </div>
+      
+      <div class="form-group">
+        <input type="email" name="email" id="getEmail" required>
+        <label for="getEmail">Email Address</label>
+      </div>
+      
+      <div class="form-group">
+        <input type="password" name="password" id="getPass" required>
+        <label for="getPass">Password</label>
+      </div>
+      
+      <button type="submit" id="button">Register</button>
+    </form>
+  </div>
+</body>
+</html>
