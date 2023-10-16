@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="style.css">
+<head>
+  <title>Landing Page</title>
+  <style>
+    body {
+      display:flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      background-image: url("back.gif");
+      background-attachment: fixed;
+    }
+    header {
+      background-color: #333;
+      text-align: center;
+      max-height: 50px;
+    }
+    
+    nav {
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+    footer {
+      background-color: #333;
+      text-align: center;
+      margin-top: auto;
+      max-height: 50px;
+    }
+    
+    .login-section {
+      margin-top: 50px;
+      text-align: center;
+      display: none;
+    }
+    
+    .login-section h2 {
+      margin-bottom: 20px;
+    }
+    
+    .login-section form {
+      display: inline-block;
+      text-align: left;
+    }
+    
+    .login-section label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .login-section input[type="text"],
+    .login-section input[type="password"] {
+      width: 200px;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    
+    .login-section input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function toggleLoginSection() {
+      var loginSection = document.getElementById("login-section");
+      if (loginSection.style.display === "none") {
+        loginSection.style.display = "block";
+      } else {
+        loginSection.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="register.html">Register</a>
+      <a href="basic.php">Basic</a>
+    </nav>
+  </header>
+  
+  <button onclick="toggleLoginSection()">Toggle Login</button>
+  
+  <div id="login-section" class="login-section">
+    <h2>Login</h2>
+    <form action="detail_basic.php" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+  
+  <footer>
+    <p>&copy; 2023 Your Company. All rights reserved.</p>
+    <p>Contact: info@yourcompany.com</p>
+  </footer>
+</body>
+</html>
