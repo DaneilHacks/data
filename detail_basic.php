@@ -1,14 +1,16 @@
 <link rel="stylesheet" href="style.css">
 <?php
     // Connect to the database (replace with your actual database connection code)
-    $servername = "localhost";   // The server where MySQL is running (usually "localhost" for XAMPP)
     $username = "root";          // Your MySQL username
     $password = "";              // Your MySQL password (leave it empty if you didn't set a password in XAMPP)
+    $host = 'localhost';
+    $port = 3306;
+    $username = 'your_username';
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $formName = $_POST["formName"];
         if ($formName === "hazPost"){
             $database = "hazak";
-            $conn = new mysqli($servername, $username, $password, $database);
+            $conn = new mysqli($host, $username, $password, $database, $port);
             if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
             }// Get the user's input for the number of rows
@@ -87,7 +89,7 @@
             }
         } elseif ($formName === "userData") {
             $database = "users";
-            $conn = new mysqli($servername, $username, $password, $database);
+            $conn = new mysqli($host, $username, $password, $database, $port);
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
@@ -117,7 +119,7 @@
             echo "Form not submitted.";
         }
         elseif ($formName === "autoPost"){
-            $conn = new mysqli($servername, $username, $password, $database);
+            $conn = new mysqli($host, $username, $password, $database, $port);
             if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
             }// Get the user's input for the number of rows
