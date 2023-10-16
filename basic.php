@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="http://localhost/public/index.html" style="color: grey;">Back Home</a>
+    <a href="index.html" style="color: grey;">Back Home</a>
     <form method="post" action="detail_basic.php">
         <input type="hidden" name="formName" value="hazPost"> <!-- Hidden field to specify the form name -->
         <label for="row_count">Number of Rows:</label>

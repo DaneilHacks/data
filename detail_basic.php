@@ -110,7 +110,7 @@
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
-        header("Location: http://localhost/public/index.php");
+        header("Location: index.php");
             exit;
         } else {
             // Handle case when the form was not submitted
