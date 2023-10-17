@@ -39,8 +39,11 @@ nav ul li a:hover {
 }
 /*Login input section*/
 .indexInputSection{
-    margin-top: auto;
-    align-items:center;
+  display: inline-block;
+}
+.indexInputSection form{
+  display: flex;
+  flex-direction: column;
 }
 .indexLoginInput {
   margin: 10px;
@@ -57,6 +60,11 @@ nav ul li a:hover {
   transform: scale(1.05);
   box-shadow: 13px 13px 100px #969696,
              -13px -13px 100px #ffffff;
+}
+#databaseError, #followUp{
+  display: none;
+}
+#followUp{
 }
 /*Login input section--end*/
 /*Container--end*/

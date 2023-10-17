@@ -19,12 +19,19 @@
     </div>
   </head>
   <div class="indexContainer">
-    <div class="indexInputSection">
-      <input type="text" autocomplete="off" name="text" class="indexLoginInput" placeholder="Username">
-      <input type="text" autocomplete="off" name="text" class="indexLoginInput" placeholder="Username">
-      <input type="text" autocomplete="off" name="text" class="indexLoginInput" placeholder="Username">
-      <input type="text" autocomplete="off" name="text" class="indexLoginInput" placeholder="Username">
-    </div>
+    <div class="indexInputSection" >
+      <form class="InputForm" id="Input">
+        <input type="text" autocomplete="off" name="text" class="indexLoginInput" placeholder="Username">
+        <input type="email" autocomplete="off" name="text" class="indexLoginInput" placeholder="Email">
+        <input type="password" autocomplete="off" name="text" class="indexLoginInput" placeholder="Password">
+        <input type="checkbox" name="checkbox" id="checkerChechbox">
+        <label for="checkbox">I agree to the terms and conditions</label>
+        <!--Make sure to add the action and change the type to submit when a database is done -->
+        <button disabled id="checkedButton" type="button">Login</button>
+      </form>
+      <p id="databaseError">404 Database not found</p>
+      <p id="followUp">Just kidding I have no database yet</p>
+      </div>
    </div>
   <footer >
     <div class="indexFooter">
