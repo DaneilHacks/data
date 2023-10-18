@@ -61,6 +61,12 @@ nav ul li a:hover {
   box-shadow: 13px 13px 100px #969696,
              -13px -13px 100px #ffffff;
 }
+#checkedButton{
+  border-radius: 12px;
+  height: 30px;
+  background-color: #eee;
+  color: #333;
+}
 #databaseError, #followUp{
   display: none;
 }
