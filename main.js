@@ -30,10 +30,12 @@ checkbox.addEventListener('change', function() {
   }
 });
 button.addEventListener('click', function(){
-  inputDiv.style.display = "none"  
-    database.style.display = "block"
+  inputDiv.style.display = "none" ;
+  database.style.display = "block"
+  followup.style.display = "block"
+  database.innerHTML = "404 Database not found";
   console.log('Joke incoming');
   setTimeout(() => {
-    followup.style.display = "block"
+    followup.innerHTML = "Just kidding I have no database yet"
   }, 3000);
 })
