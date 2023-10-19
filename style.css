@@ -6,6 +6,8 @@ body{
   height: 100%;
   justify-content: center;
   text-align: center;
+  align-items: center;
+  min-width: 350px;
 }
 /*Index*/
 /*header section*/
@@ -15,6 +17,8 @@ body{
   width: 100%;
   text-align: left;
   text-transform:capitalize;
+  align-items: center;
+  display: flex;
 }
 nav ul {
   list-style: none;
@@ -36,6 +40,9 @@ nav ul li a:hover {
 /*Container*/
 .indexContainer{
   height: calc(100vh - 35px - 30px);
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 /*Login input section*/
 .indexInputSection{
@@ -67,12 +74,24 @@ nav ul li a:hover {
   background-color: #eee;
   color: #333;
 }
-#databaseError, #followUp{
+/*Login input section--end*/
+/*IndexJokes*/
+#indexJokes{
   display: none;
 }
-#followUp{
+#databaseError {
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+  animation: typing 2s steps(20) forwards;
 }
-/*Login input section--end*/
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+/*IndexJokes--end*/
 /*Container--end*/
 /*Footer Section*/
 .indexFooter{
@@ -80,6 +99,9 @@ nav ul li a:hover {
   width: 100%;
   background-color: red;
   margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /*Footer Section--end*/
 /*Index--end*/
