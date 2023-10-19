@@ -19,7 +19,8 @@
     </div>
   </head>
   <div class="indexContainer">
-    <div class="indexInputSection" >
+    <div id="indexAdSection"></div>
+    <div class="indexMainSection" id="indexMainSection">
       <form class="InputForm" id="Input">
         <input type="text" autocomplete="off" name="text" class="indexLoginInput" placeholder="Username">
         <input type="email" autocomplete="off" name="text" class="indexLoginInput" placeholder="Email">
@@ -29,18 +30,18 @@
         <!--Make sure to add the action and change the type to submit when a database is done -->
         <button disabled id="checkedButton" type="button">Login</button>
       </form>
-      <div id="indexJokes">
-        <p id="databaseError"></p>
-        <p id="followUp"></p>
+        <div id="indexJokes">
+          <p id="databaseError"></p>
+          <p id="followUp"></p>
+        </div>
       </div>
-      </div>
-   </div>
+      <div id="indexAdSection"></div>
+  </div>
   <footer >
     <div class="indexFooter">
       <p>All rights reseverd: <span>Dani co.</span>
     </p>
     </div>
-    
   </footer>
 </body>
 <script src="main.js"></script>

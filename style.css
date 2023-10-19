@@ -31,7 +31,6 @@ nav ul li a {
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
-
 nav ul li a:hover {
   background-color: #ccc;
   color: #333;
@@ -45,10 +44,10 @@ nav ul li a:hover {
   display: flex;
 }
 /*Login input section*/
-.indexInputSection{
+.indexMainSection{
   display: inline-block;
 }
-.indexInputSection form{
+.indexMainSection form{
   display: flex;
   flex-direction: column;
 }

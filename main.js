@@ -4,6 +4,9 @@ const inputDiv = document.getElementById("Input")
 const database = document.getElementById("databaseError")
 const followup = document.getElementById("followUp")
 const jokes = document.getElementById("indexJokes")
+const adSection = document.getElementById("indexAdSection")
+const main = document.getElementById("indexMainSection")
+
 function handleButtonMouseOver() {
   button.style.backgroundColor = "#333";
   button.style.color = "#ccc";
