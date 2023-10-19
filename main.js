@@ -30,24 +30,23 @@ checkbox.addEventListener('change', function() {
     button.removeEventListener("mouseout", handleButtonMouseOut);
   }
 });
-const text = "Sorry no database yet"; // The text to be animated
-  const typingEffect = document.getElementById("databaseError");
-  let charIndex = 0;
-  function type() {
-    if (charIndex < text.length) {
-      typingEffect.textContent += text.charAt(charIndex);
-      charIndex++;
-      setTimeout(type, 100); // Adjust typing speed here (in milliseconds)
-    }
+const text = "Database error"; // The text to be animated
+let charIndex = 0;
+function type() {
+  if (charIndex < text.length) {
+    database.textContent += text.charAt(charIndex);
+    charIndex++;
+    setTimeout(type, 100); // Adjust typing speed here (in milliseconds)
   }
+  else{
+    setTimeout(() => {
+  followup.innerHTML = "Just kidding I have no database yet"
+  }, 3000);
+  }
+}
 button.addEventListener('click', function(){
   inputDiv.style.display = "none" ;
   jokes.style.display = "block"
   type();
-  //database.innerHTML = "404 Database not found";
   console.log('Joke incoming');
-  setTimeout(() => {
-    followup.innerHTML = "Just kidding I have no database yet"
-  }, 3000);
-
 })
