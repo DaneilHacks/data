@@ -8,6 +8,7 @@ body{
   text-align: center;
   align-items: center;
   min-width: 350px;
+  min-height: 350px;
 }
 /*Index*/
 /*header section*/
@@ -66,6 +67,9 @@ nav ul li a:hover {
   transform: scale(1.05);
   box-shadow: 13px 13px 100px #969696,
              -13px -13px 100px #ffffff;
+}
+#checkerChechbox{
+  height: 17px;
 }
 #checkedButton{
   border-radius: 12px;
