@@ -53,3 +53,9 @@ button.addEventListener('click', function(){
   type();
   console.log('Joke incoming');
 })
+fetch('http://192.168.10.102:5000/api/get_data')
+  .then(response => response.json())
+  .then(data => {
+    // Handle and display the data on your website
+  })
+  .catch(error => console.error(error));
