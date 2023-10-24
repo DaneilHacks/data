@@ -53,9 +53,24 @@ button.addEventListener('click', function(){
   type();
   console.log('Joke incoming');
 })
-fetch('http://192.168.10.102:5000/api/get_data')
-  .then(response => response.json())
-  .then(data => {
-    // Handle and display the data on your website
-  })
-  .catch(error => console.error(error));
+// Initialize the Firebase Realtime Database
+const db = firebase.database();
+
+// Example: Read data from the Firebase Realtime Database
+const dataRef = db.ref("your_data_path");
+dataRef.on("value", (snapshot) => {
+  const data = snapshot.val();
+  // Handle the retrieved data here
+});
+// Example: Write data to the Firebase Realtime Database
+const newData = {
+  key1: "value1",
+  key2: "value2",
+};
+dataRef.set(newData, (error) => {
+  if (error) {
+    console.log("Data could not be saved." + error);
+  } else {
+    console.log("Data saved successfully.");
+  }
+});
