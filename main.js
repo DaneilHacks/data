@@ -53,24 +53,45 @@ button.addEventListener('click', function(){
   type();
   console.log('Joke incoming');
 })
-// Initialize the Firebase Realtime Database
-const db = firebase.database();
+// Function to handle user registration
+function registerUser() {
+  // Get user input from the form
+  const username = document.querySelector('.indexLoginInput[placeholder="Username"]').value;
+  const email = document.querySelector('.indexLoginInput[placeholder="Email"]').value;
+  const password = document.querySelector('.indexLoginInput[placeholder="Password"]').value;
 
-// Example: Read data from the Firebase Realtime Database
-const dataRef = db.ref("your_data_path");
-dataRef.on("value", (snapshot) => {
-  const data = snapshot.val();
-  // Handle the retrieved data here
-});
-// Example: Write data to the Firebase Realtime Database
-const newData = {
-  key1: "value1",
-  key2: "value2",
-};
-dataRef.set(newData, (error) => {
-  if (error) {
-    console.log("Data could not be saved." + error);
-  } else {
-    console.log("Data saved successfully.");
-  }
-});
+  // Create a new user with email and password
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // User registered successfully
+      const user = userCredential.user;
+
+      // Store additional user information in the Realtime Database
+      const db = firebase.database();
+      const usersRef = db.ref('users');
+      const userInformation = {
+        email: email,
+        username: username,
+        // Additional user data
+      };
+
+      // Use the user's unique ID as the key for the user data
+      const userId = user.uid;
+
+      // Set the user information in the database
+      usersRef.child(userId).set(userInformation);
+
+      // Redirect or perform other actions after successful registration
+    })
+    .catch((error) => {
+      // Handle registration errors
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // Display error to the user
+    });
+}
+
+// Add an event listener to the registration button
+const registerButton = document.getElementById('checkedButton');
+registerButton.addEventListener('click', registerUser);
+
