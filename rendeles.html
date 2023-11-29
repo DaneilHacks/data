@@ -1,11 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rendelés</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    select, input[type="range"] {
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+  <title>Pizzeria Order</title>
 </head>
 <body>
-    <h1>Itt tudsz rendelni</h1>
+  <h1>Customize Your Pizza</h1>
+  <form id="pizzaForm">
+    <div>
+      <label for="toppings">Toppings:</label>
+      <select id="toppings" name="toppings">
+        <option value="pepperoni">Pepperoni</option>
+        <option value="mushrooms">Mushrooms</option>
+        <option value="onions">Onions</option>
+        <option value="sausage">Sausage</option>
+      </select>
+    </div>
+    <div>
+      <label for="size">Size (cm):</label>
+      <input type="range" id="size" name="size" min="20" max="40" value="30" oninput="document.getElementById('sizeOutput').textContent = this.value + ' cm'">
+      <span id="sizeOutput">30 cm</span>
+    </div>
+    <button type="button" id="orderButton" onclick="alert('Your order is sent to process')">Place Order</button>
+  </form>
 </body>
 </html>
